@@ -129,9 +129,6 @@ form .add:focus {
     width: 60%;
     padding: 15px;
   }
-  .tasks div {
-    flex-wrap: wrap;
-  }
   .task-disc {
     font-size: 1rem;
     width: 25ch;

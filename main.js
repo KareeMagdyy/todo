@@ -4,10 +4,40 @@ const addTask = document.querySelector(".add");
 const tasksArea = document.querySelector(".tasks");
 
 //Event Listeners
+document.addEventListener("DOMContentLoaded", popup);
 document.addEventListener("DOMContentLoaded", showTasks);
 addTask.addEventListener("click", addTodo);
 tasksArea.addEventListener("click", deleteCheckTask);
 
+//Landscape preference
+function popup() {
+  if (window.innerWidth < 700) {
+    const div = document.createElement("div");
+    const div2 = document.createElement("div");
+    const button = document.createElement("button");
+    button.textContent = "Ok";
+
+    const h1 = document.createElement("h1");
+    h1.textContent = "Welcome";
+
+    const para = document.createElement("p");
+    para.textContent = "Rotate To Landscape For Better Experience";
+
+    div2.appendChild(h1);
+    div2.appendChild(para);
+    div2.appendChild(button);
+    //Styling
+    div.style.cssText = `display:flex;align-items:center;justify-content:center;heigh:100%;`;
+    div2.style.cssText = `width: 50%; text-align: center; border: 1px #888 solid; background-color:#F5F3F4; position:fixed; z-index: 100; padding: 30px;border-radius:8px;`;
+    button.style.cssText = `background-color:red; border:none; padding: 8px 18px; border-radius:8px; cursor: pointer; font-weight:bold; font-size: 1rem;color:#fff;`;
+    h1.style.fontSize = "2rem";
+    para.style.fontSize = "1rem";
+
+    button.onclick = () => (div.style.display = "none");
+    div.appendChild(div2);
+    document.body.appendChild(div);
+  }
+}
 //Adding Tasks
 function addTodo() {
   if (taskText.value != "") {
