@@ -32,7 +32,7 @@ function popup() {
     button.style.cssText = `background-color:red; border:none; padding: 8px 18px; border-radius:8px; cursor: pointer; font-weight:bold; font-size: 1rem;color:#fff;`;
     h1.style.fontSize = "2rem";
     para.style.fontSize = "1rem";
-
+    div.onclick = () => (div.style.display = "none");
     button.onclick = () => (div.style.display = "none");
     div.appendChild(div2);
     document.body.appendChild(div);
